@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Exporter",
+  "version": "0.0.1",
+  "description": "Export a Teams chat (text, sender, timestamps) to JSON directly from the chat view.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://teams.microsoft.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["*://teams.microsoft.com/*"]
+    }
+  ]
+}
